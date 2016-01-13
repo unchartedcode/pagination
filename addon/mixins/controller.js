@@ -29,7 +29,7 @@ export default function(model_name) {
 
     is_page_first: Ember.computed.equal('page_prev', null),
     is_page_last: Ember.computed.equal('page_next', null),
-    has_pages: Ember.computed.gt('page_count', 0),
+    has_pages: Ember.computed.gt('page_count', 1),
 
     visible_pages: Ember.computed('page_count', 'page', function() {
       var page = this.get('page');
