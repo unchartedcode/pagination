@@ -2,7 +2,12 @@ import Ember from 'ember';
 
 export default function(model_name) {
   return Ember.Mixin.create({
-    record_count: Ember.computed.alias(model_name + '.meta.record_count'),
+    record_count: Ember.computed(model_name + '.meta.{record_count,count}', function() {
+      if (Ember.isPresent(this.get(model_name + '.meta.count'))) {
+        return this.get(model_name + '.meta.count');
+      }
+      return this.get(model_name + '.meta.record_count');
+    }),
 
     page_count: Ember.computed('record_count', 'page_size', function() {
       return Math.ceil(this.get('record_count') / this.get('page_size'));
