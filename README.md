@@ -1,4 +1,4 @@
-my-addon
+uncharted-pagination
 ==============================================================================
 
 [Short description of the addon.]
@@ -16,7 +16,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install my-addon
+ember install uncharted-pagination
 ```
 
 
